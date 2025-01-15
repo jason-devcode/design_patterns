@@ -23,8 +23,12 @@ each with its own unique attributes (or states). This blueprint is what
 we call a class, as it represents a "class" of objects from the real world.
 
 
+**Encapsulation:**
+Encapsulation is the ability of an object to hide internal details so that they are only available to itself and expose only what is necessary for other objects to interact with it.
 
 
+**Interfaces:**
+When one object needs to interact with another, it does so through an interface that the other object exposes publicly for others to interact with it.
 
 
 
