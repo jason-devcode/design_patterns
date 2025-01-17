@@ -13,30 +13,8 @@ For example, in a system modeling animals, we can say that:
 ### **Polymorphism and the "is-a" Relationship**  
 Thanks to inheritance, instances of subclasses can also be treated as instances of the general class due to the "is-a" relationship. This means that an object of type `Dog` or `Cat` can be treated as if it were an object of type `Animal`. This is the foundation of **polymorphism**, which allows us to write more flexible and reusable code.
 
-### **Example of Polymorphism in Action:**
-Using polymorphism, we can write code that works with any `Animal` and let the specific implementation of the subclass decide the behavior. For example, we might have a method `makeSound(Animal animal)` that can call specific behaviors like `bark()` for a `Dog` or `meow()` for a `Cat`. This allows us to treat both `Dog` and `Cat` as instances of `Animal` while still calling subclass-specific behavior based on the actual type of the object.
-
----
-
-### Key Points:
-
-1. **Inheritance or Generalization**:
-   - Arises from the "is-a" relationship between classes.
-   - The general class encapsulates the common elements, while subclasses represent specializations.
-   
-2. **Polymorphism**:
-   - Allows an object of a specific class (`Dog`, `Cat`) to be treated as an object of the general class (`Animal`), leveraging the hierarchical relationship.
-
-### Real-World Example:
-Consider a vehicle system:  
-- `Car`, `Bicycle`, and `Motorcycle` are specific classes that "are" types of a `Vehicle` (general class).  
-- A `Vehicle` may have common attributes such as `speed` or `capacity`, and behaviors like `accelerate()` or `brake()`.  
-- However, each type of vehicle can have additional behaviors, such as `honk()` for a car or `doWheelie()` for a motorcycle.
-
-This "is-a" relationship ensures that subclasses behave coherently as their superclass.
-
-
 **Implementation (or realization):**
+The implementation or realization of an interface or protocol in a class requires that class to adhere to a contract that defines a set of behaviors or methods. This ensures that objects of that class can communicate with other objects or be used in contexts where compliance with that interface or protocol is required.
 
 **Dependency:**
 
