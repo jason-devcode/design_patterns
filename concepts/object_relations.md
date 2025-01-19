@@ -29,5 +29,9 @@ In aggregation relationship, the objects of one class can interact with the obje
 In composition, the objects of one class rely on the existence of objects from another class and are responsible for managing their lifecycle.
 
 **Multiplicity:**
+**Multiplicity** (or **reciprocity**) in the context of class relationships describes the number of instances of one class that can be associated with instances of another class. This relationship can take several forms, such as:
 
-
+- **One-to-one (1:1):** Each instance of a class is associated with exactly one instance of the other class.
+- **One-to-many (1:N):** One instance of a class can be associated with multiple instances of the other class.
+- **Zero-to-many (0:N):** An instance may have no associated instances or may be associated with multiple ones.
+- **Many-to-many (M:N):** Several instances of one class can be associated with several instances of another class.
