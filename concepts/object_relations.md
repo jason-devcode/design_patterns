@@ -23,6 +23,7 @@ The implementation or realization of an interface or protocol in a class require
 In an association relationship, the objects of one class can interact with the objects of another class. For example, the objects of class A are aware of the existence of objects of class B and can interact with them, either by maintaining internal instances of these objects and managing their lifecycle, or by holding references to objects external to the object itself.
 
 **Aggregation:**
+In aggregation relationship, the objects of one class can interact with the objects of another class, and objects of one class can act as containers or collections of objects from the other class. For example, by maintaining an array, vector, matrix, or a set of references to objects from the other class, which are added to the collection through a series of methods that allow adding and removing references from the collection.
 
 **Composition:**
 
