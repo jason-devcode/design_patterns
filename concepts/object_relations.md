@@ -26,6 +26,7 @@ In an association relationship, the objects of one class can interact with the o
 In aggregation relationship, the objects of one class can interact with the objects of another class, and objects of one class can act as containers or collections of objects from the other class. For example, by maintaining an array, vector, matrix, or a set of references to objects from the other class, which are added to the collection through a series of methods that allow adding and removing references from the collection.
 
 **Composition:**
+In composition, the objects of one class rely on the existence of objects from another class and are responsible for managing their lifecycle.
 
 **Multiplicity:**
 
