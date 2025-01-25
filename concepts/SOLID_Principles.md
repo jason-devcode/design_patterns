@@ -6,6 +6,7 @@ A class should have a single responsibility or purpose. One way to evaluate whet
 A class should be open to extensions and closed to modifications. This means that once a class is considered complete, it should not be modified unless there is a functionality issue that needs to be fixed.
 
 **Liskov Substitution Principle:**
+A subclass must be able to replace its base class without altering the behavior expected by the client.
 
 **Interface Segregation Principle:**
 
