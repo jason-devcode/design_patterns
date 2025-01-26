@@ -7,6 +7,15 @@ A class should be open to extensions and closed to modifications. This means tha
 
 **Liskov Substitution Principle:**
 A subclass must be able to replace its base class without altering the behavior expected by the client.
+For a subclass to comply with this principle, it must meet the following requirements:
+
+1. The typing of the parameters of a subclass method must be the same or use abstractions of the typing of the same method in the superclass.  
+2. The return type of a subclass method must be the same or an extension of the return type used in the method in the superclass.  
+3. A subclass method must not throw exception types that are not expected to be thrown by the method in the superclass, as this changes the behavior expected by the method's client.  
+4. A subclass must not strengthen the preconditions.  
+5. A subclass must not weaken the preconditions.  
+6. The invariants of the superclass must be preserved; invariants are conditions under which an object makes sense.  
+7. A subclass must not be able to modify private fields of the superclass.
 
 **Interface Segregation Principle:**
 
