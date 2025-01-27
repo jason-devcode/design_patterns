@@ -18,6 +18,7 @@ For a subclass to comply with this principle, it must meet the following require
 7. A subclass must not be able to modify private fields of the superclass.
 
 **Interface Segregation Principle:**
+An interface should not force a class to implement methods that are irrelevant or unnecessary for it. Therefore, it is better to divide (segregate) the interface into smaller and more specific interfaces so that classes only have to implement the methods they actually use.
 
 **Dependency Inversion Principle:**
 
