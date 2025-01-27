@@ -21,5 +21,5 @@ For a subclass to comply with this principle, it must meet the following require
 An interface should not force a class to implement methods that are irrelevant or unnecessary for it. Therefore, it is better to divide (segregate) the interface into smaller and more specific interfaces so that classes only have to implement the methods they actually use.
 
 **Dependency Inversion Principle:**
-
+High-level classes should not depend on low-level classes, and vice versa. To achieve this, both types of classes must depend on interfaces or abstractions, and abstractions should not depend on details.
 
