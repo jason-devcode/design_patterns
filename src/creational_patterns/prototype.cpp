@@ -3,26 +3,22 @@
 #include <stdexcept>
 
 /**
- * Define Abstract Class Prototype
- */
-class Prototype
-{
-public:
-    virtual ~Prototype() = default;
-    virtual std::unique_ptr<Prototype> clone() = 0;
-};
-
-/**
  * Abstract Class Car
  */
-class Car : public Prototype
+class Car
 {
 public:
     Car() = default;
-    Car(int car_number) : car_number(car_number) {};
     virtual ~Car() = default;
 
-    void printCarNumber()
+    Car(int car_number) : car_number(car_number) {};
+
+    /**
+     * method to clone objects - prototype pattern
+     */
+    virtual std::unique_ptr<Car> clone() const = 0;
+
+    virtual void printCarNumber() const
     {
         std::cout << "Car number: " << this->car_number << std::endl;
     }
@@ -43,9 +39,37 @@ public:
     }
     ~ClassicCar() = default;
 
-    std::unique_ptr<Prototype> clone() override
+    std::unique_ptr<Car> clone() const override
     {
         return std::make_unique<ClassicCar>(this->car_number);
+    }
+
+    virtual void printCarNumber() const override
+    {
+        std::cout << "Classic Car number: " << this->car_number << std::endl;
+    }
+};
+
+/**
+ * Factory method to complement prototype example
+ */
+class CarFactory
+{
+public:
+    ~CarFactory() = default;
+    virtual std::unique_ptr<Car> createCar(int car_number) const = 0;
+};
+
+/**
+ * Concrete Car Factories
+ */
+class ClassicCarFactory : public CarFactory
+{
+public:
+    ~ClassicCarFactory() = default;
+    std::unique_ptr<Car> createCar(int car_number) const override
+    {
+        return std::make_unique<ClassicCar>(car_number);
     }
 };
 
@@ -53,19 +77,13 @@ int main()
 {
     try
     {
-        std::unique_ptr<Car> car1 = std::make_unique<ClassicCar>(123);
-        std::unique_ptr<Prototype> car2 = car1->clone(); 
+        std::unique_ptr<CarFactory> carFactory = std::make_unique<ClassicCarFactory>();
+
+        std::unique_ptr<Car> car1 = carFactory->createCar(123);
+        std::unique_ptr<Car> car2 = car1->clone();
 
         car1->printCarNumber();
-
-        if (auto *car2_casted = dynamic_cast<Car *>(car2.get()))
-        {
-            car2_casted->printCarNumber();
-        }
-        else
-        {
-            std::cerr << "Error: Cast not valid." << std::endl;
-        }
+        car2->printCarNumber();
     }
     catch (const std::exception &e)
     {
