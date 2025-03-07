@@ -8,8 +8,10 @@ class BinaryTree
 public: // inner classes
     class TreeNode;
     class Iterator;
+
 public: // interface
     virtual void insertData() = 0;
+
 private:
     std::shared_ptr<TreeNode> root = nullptr;
 };
@@ -18,10 +20,16 @@ template <typename DataType>
 class BinaryTree<DataType>::TreeNode
 {
 public:
+    using SharedNode = std::shared_ptr<TreeNode>;
+
     TreeNode() = default;
+    TreeNode(DataType data) : m_data(data) {};
     ~TreeNode() = default;
 
-    using SharedNode = std::shared_ptr<TreeNode>;
+    void setData(DataType data)
+    {
+        m_data = data;
+    }
 
     void setParentNode(SharedNode parentNode) { parent = parentNode; }
     void insertLeftChildNode(SharedNode leftNode) { leftChild = leftNode; }
